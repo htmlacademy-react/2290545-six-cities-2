@@ -1,5 +1,5 @@
 export const Setting = {
 
-  СardsCount: 3
+  СardsCount: 6
 
 };
