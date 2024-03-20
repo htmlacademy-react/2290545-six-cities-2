@@ -115,7 +115,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {array.from({ length: cardsCount }, (_, index) => (
+                {Array.from({ length: cardsCount }, (_, index) => (
                   <Card key={index} />
                 ))}
               </div>
