@@ -29,7 +29,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     <div className="header__avatar-wrapper user__avatar-wrapper"></div>
                     <span className="header__user-name user__name">
                   Oliver.conner@gmail.com
-                </span>
+                    </span>
                     <span className="header__favorite-count">3</span>
                   </a>
                 </li>
@@ -90,10 +90,10 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
               Popular
-              <svg className="places__sorting-arrow" width={7} height={4}>
-                <use xlinkHref="#icon-arrow-select" />
-              </svg>
-            </span>
+                  <svg className="places__sorting-arrow" width={7} height={4}>
+                    <use xlinkHref="#icon-arrow-select" />
+                  </svg>
+                </span>
                 <ul className="places__options places__options--custom places__options--opened">
                   <li
                     className="places__option places__option--active"
@@ -150,7 +150,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     </div>
                     <div className="place-card__rating rating">
                       <div className="place-card__stars rating__stars">
-                        <span style={{ width: "80%" }} />
+                        <span style={{ width: '80%' }} />
                         <span className="visually-hidden">Rating</span>
                       </div>
                     </div>
@@ -196,7 +196,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     </div>
                     <div className="place-card__rating rating">
                       <div className="place-card__stars rating__stars">
-                        <span style={{ width: "80%" }} />
+                        <span style={{ width: '80%' }} />
                         <span className="visually-hidden">Rating</span>
                       </div>
                     </div>
@@ -240,7 +240,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     </div>
                     <div className="place-card__rating rating">
                       <div className="place-card__stars rating__stars">
-                        <span style={{ width: "80%" }} />
+                        <span style={{ width: '80%' }} />
                         <span className="visually-hidden">Rating</span>
                       </div>
                     </div>
@@ -287,7 +287,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     </div>
                     <div className="place-card__rating rating">
                       <div className="place-card__stars rating__stars">
-                        <span style={{ width: "100%" }} />
+                        <span style={{ width: '100%' }} />
                         <span className="visually-hidden">Rating</span>
                       </div>
                     </div>
@@ -331,7 +331,7 @@ function MainScreen({cardsCount}: MainScreenProps): JSX.Element {
                     </div>
                     <div className="place-card__rating rating">
                       <div className="place-card__stars rating__stars">
-                        <span style={{ width: "80%" }} />
+                        <span style={{ width: '80%' }} />
                         <span className="visually-hidden">Rating</span>
                       </div>
                     </div>

@@ -1,4 +1,5 @@
-import MainScreen from "../../pages/main-screen/main-screen";
+import MainScreen from '../../pages/main-screen/main-screen';
+
 
 type AppScreenProps = {
   cardsCount: number;
