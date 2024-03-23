@@ -27,7 +27,7 @@ function App({cardsCount}: AppProps): JSX.Element {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
               >
-                <LoginScreen />
+                <FavoritesScreen />
               </PrivateRoute>
             }
           />
@@ -43,7 +43,6 @@ function App({cardsCount}: AppProps): JSX.Element {
             path="*"
             element={<NotFoundScreen />}
           />
-          <Route path={`${AppRoute.Offer}/:OfferId`} element={<OfferScreen />} />
           <Route path={'*'} element ={<NotFoundScreen />} />
         </Routes>
       </BrowserRouter>
