@@ -1,4 +1,10 @@
-function Card(): JSX.Element {
+import {offersMock} from "../../mocks/offers";
+
+type CardProps = {
+  cardProps: [];
+}
+
+function Card({offersMock}: CardProps): JSX.Element {
   return (
     <article className="cities__card place-card">
       <div className="place-card__mark">

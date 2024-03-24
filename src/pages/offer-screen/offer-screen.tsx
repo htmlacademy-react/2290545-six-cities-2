@@ -456,8 +456,6 @@ function OfferScreen(): JSX.Element {
         </div>
       </main>
     </div>
-
-
   );
 }
 

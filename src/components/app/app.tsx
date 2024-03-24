@@ -7,12 +7,14 @@ import OfferScreen from '../../pages/offer-screen/offer-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import {HelmetProvider} from 'react-helmet-async';
+import {Types} from '../../types/types';
 
 type AppProps = {
   cardsCount: number;
+  types: Types;
 }
 
-function App({cardsCount}: AppProps): JSX.Element {
+function App({cardsCount, types}: AppProps): JSX.Element {
   return (
     <HelmetProvider>
       <BrowserRouter>
