@@ -7,21 +7,20 @@ import OfferScreen from '../../pages/offer-screen/offer-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import {HelmetProvider} from 'react-helmet-async';
-import {Types} from '../../types/types';
+import {Offer} from '../../types/offer';
 
 type AppProps = {
-  cardsCount: number;
-  types: Types;
+  offers: Offer[];
 }
 
-function App({cardsCount, types}: AppProps): JSX.Element {
+function App({ offers }: AppProps): JSX.Element {
   return (
     <HelmetProvider>
       <BrowserRouter>
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={<MainScreen cardsCount={cardsCount} />}
+            element={<MainScreen offers={offers} />}
           />
           <Route
             path={AppRoute.Favorites}
@@ -29,7 +28,7 @@ function App({cardsCount, types}: AppProps): JSX.Element {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
               >
-                <FavoritesScreen />
+                <FavoritesScreen offers={offers}/>
               </PrivateRoute>
             }
           />
@@ -39,7 +38,7 @@ function App({cardsCount, types}: AppProps): JSX.Element {
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferScreen />}
+            element={<OfferScreen offers={offers} />}
           />
           <Route
             path="*"

@@ -1,13 +1,18 @@
-import Logo from '../../components/logo/logo';
+import Header from '../../components/header/header.tsx';
+import {Offer} from '../../types/offer.ts';
 
-function FavoritesScreen(): JSX.Element {
+type FavoritesProps = {
+  offers: Offer[];
+};
+
+function FavoritesScreen({ offers }: FavoritesProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <Logo />
+              <Header />
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
