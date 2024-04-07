@@ -8,9 +8,8 @@ type CardListProps = {
   onMouseOver?: (evt: MouseEvent) => void;
 };
 
-function CardList({offers, onMouseOver}: CardListProps): JSX.Element {
+export default function CardList({offers, onMouseOver}: CardListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState('');
-  console.log(activeCard);
   return (
     <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) => (
@@ -20,4 +19,3 @@ function CardList({offers, onMouseOver}: CardListProps): JSX.Element {
   );
 }
 
-export default CardList;

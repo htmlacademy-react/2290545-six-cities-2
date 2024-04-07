@@ -8,12 +8,14 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import {HelmetProvider} from 'react-helmet-async';
 import {Offer} from '../../types/offer';
+import {Review} from '../../types/review.ts';
 
 type AppProps = {
   offers: Offer[];
+  reviews: Review[];
 }
 
-function App({ offers }: AppProps): JSX.Element {
+export default function App({ offers, reviews }: AppProps): JSX.Element {
   return (
     <HelmetProvider>
       <BrowserRouter>
@@ -28,7 +30,7 @@ function App({ offers }: AppProps): JSX.Element {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
               >
-                <FavoritesScreen offers={offers}/>
+                <FavoritesScreen offers={offers} reviews={reviews}/>
               </PrivateRoute>
             }
           />
@@ -38,7 +40,7 @@ function App({ offers }: AppProps): JSX.Element {
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferScreen offers={offers} />}
+            element={<OfferScreen offers={offers} reviews={reviews} />}
           />
           <Route
             path="*"
@@ -51,4 +53,3 @@ function App({ offers }: AppProps): JSX.Element {
   );
 }
 
-export default App;
