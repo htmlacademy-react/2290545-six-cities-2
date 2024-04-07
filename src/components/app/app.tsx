@@ -30,7 +30,7 @@ export default function App({ offers, reviews }: AppProps): JSX.Element {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
               >
-                <FavoritesScreen offers={offers} reviews={reviews}/>
+                <FavoritesScreen offers={offers}/>
               </PrivateRoute>
             }
           />
