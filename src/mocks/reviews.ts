@@ -1,4 +1,4 @@
-import {Review} from '../types/offer';
+import {Review} from '../types/review.ts';
 
 export const reviewMock: Review[] = [
   {
