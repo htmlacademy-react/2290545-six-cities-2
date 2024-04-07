@@ -1,6 +1,11 @@
 import Logo from '../../components/logo/logo';
+import {Offer} from '../../types/offer.ts';
 
-function OfferScreen(): JSX.Element {
+type OfferScreenProps = {
+  offers: Offer[];
+};
+
+function OfferScreen({ offers }: OfferScreenProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">
@@ -456,8 +461,6 @@ function OfferScreen(): JSX.Element {
         </div>
       </main>
     </div>
-
-
   );
 }
 
