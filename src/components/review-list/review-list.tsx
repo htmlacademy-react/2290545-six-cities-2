@@ -8,14 +8,19 @@ type ReviewProps = {
 export default function ReviewList({reviews}: ReviewProps): JSX.Element {
 
   return (
-    <section>
+    <section className="offer__reviews reviews">
       <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">1</span></h2>
       <ul className="reviews__list">
         {reviews.map(({rating, id, user, comment}) => (
           <li className="reviews__item" key={id}>
             <div className="reviews__user user">
               <div className="reviews__avatar-wrapper user__avatar-wrapper">
-                <img className="reviews__avatar user__avatar" src={user.avatarUrl} width="54" height="54" alt="Reviews avatar"/>
+                <img className="reviews__avatar user__avatar"
+                  src={user.avatarUrl}
+                  width="54"
+                  height="54"
+                  alt="Reviews avatar"
+                />
               </div>
               <span className="reviews__user-name">
                 {user.name}

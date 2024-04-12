@@ -1,5 +1,5 @@
-import {RATING_STARS_STYLE_KOEF} from '../const.ts';
+import {MAX_STARS_RATING} from '../const.ts';
 
 export function getRatingStarsStyle(rating: number): string {
-  return `${RATING_STARS_STYLE_KOEF * rating}%`;
+  return `${rating * 100 / MAX_STARS_RATING }%`;
 }
