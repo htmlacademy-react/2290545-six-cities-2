@@ -1,41 +1,40 @@
 import {useRef, useEffect} from 'react';
 import {Icon, Marker, layerGroup} from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT} from '../const.ts';
-import {Offer} from '../types/offer.ts';
-import useMap from '../hooks/use-map.tsx';
+import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT} from '../../const.ts';
+import {Location, Offer} from '../../types/offer.ts';
+import useMap from '../../hooks/use-map.tsx';
 
 
 type MapProps = {
   offers: Offer[];
-  selectedPoint: Offer | undefined;
+  location: Location;
+  selectedPoint?: Offer | undefined;
 };
 
 const defaultCustomIcon = new Icon({
   iconUrl: URL_MARKER_DEFAULT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
+  iconSize: [27, 39],
+  iconAnchor: [27, 39]
 });
 
 const currentCustomIcon = new Icon({
   iconUrl: URL_MARKER_CURRENT,
-  iconSize: [40, 40],
-  iconAnchor: [20, 40]
+  iconSize: [27, 39],
+  iconAnchor: [27, 39]
 });
 
-function Map(props: MapProps): JSX.Element {
-  const {offers, selectedPoint} = props;
-
+function Map({ offers, selectedPoint, location}: MapProps): JSX.Element {
   const mapRef = useRef(null);
-  const map = useMap(mapRef, offers[]);
+  const map = useMap(mapRef, location);
 
   useEffect(() => {
     if (map) {
       const markerLayer = layerGroup().addTo(map);
       offers.forEach((offer) => {
         const marker = new Marker({
-          lat: offer.location.latitude,
-          lng: offer.location.longitude
+          lat: offer.city.location.latitude,
+          lng: offer.city.location.longitude
         });
 
         marker
@@ -53,7 +52,7 @@ function Map(props: MapProps): JSX.Element {
     }
   }, [map, offers, selectedPoint]);
 
-  return <div style={{height: '500px'}} ref={mapRef}></div>;
+  return <div style={{height: '100%'}} ref={mapRef}></div>;
 }
 
 export default Map;
