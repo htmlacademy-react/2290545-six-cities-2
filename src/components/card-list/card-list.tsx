@@ -1,14 +1,13 @@
 import {Offer} from '../../types/offer.ts';
 import Card from '../../components/card/card';
-import {MouseEvent, useState} from 'react';
+import {useState} from 'react';
 
 
 type CardListProps = {
   offers: Offer[];
-  onMouseOver?: (evt: MouseEvent) => void;
 };
 
-export default function CardList({offers, onMouseOver}: CardListProps): JSX.Element {
+export default function CardList({offers}: CardListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState('');
   return (
     <div className="cities__places-list places__list tabs__content">

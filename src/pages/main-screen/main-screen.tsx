@@ -1,5 +1,5 @@
 import Header from '../../components/header/header';
-import {Offer, Location, City} from '../../types/offer';
+import {Offer} from '../../types/offer';
 import Cities from '../../components/cities/cities.tsx';
 import Sort from '../../components/sort/sort.tsx';
 import CardList from '../../components/card-list/card-list.tsx';
@@ -7,8 +7,6 @@ import Map from '../../components/map/map.tsx';
 
 type MainProps = {
   offers: Offer[];
-  location: Location;
-  city: City;
 };
 
 function MainScreen({offers}: MainProps): JSX.Element {
@@ -27,9 +25,7 @@ function MainScreen({offers}: MainProps): JSX.Element {
               <CardList offers={offers} ></CardList>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map">
-                <Map offers={offers} location={offers[0].city.location}></Map>
-              </section>
+              <Map offers={offers} className="cities__map map"/>
             </div>
           </div>
         </div>

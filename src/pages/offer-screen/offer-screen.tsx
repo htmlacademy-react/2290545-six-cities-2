@@ -7,7 +7,7 @@ type OfferScreenProps = {
     reviews?: Review[];
 };
 
-function OfferScreen({offers, reviews}: OfferScreenProps): JSX.Element {
+function OfferScreen({}: OfferScreenProps): JSX.Element {
   return (
     <div className="page">
       <header className="header">

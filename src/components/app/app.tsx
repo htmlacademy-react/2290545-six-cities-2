@@ -22,7 +22,7 @@ export default function App({ offers, reviews }: AppProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.Root}
-            element={<MainScreen offers={offers} />}
+            element={<MainScreen offers={offers}/>}
           />
           <Route
             path={AppRoute.Favorites}
@@ -30,7 +30,7 @@ export default function App({ offers, reviews }: AppProps): JSX.Element {
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
               >
-                <FavoritesScreen offers={offers}/>
+                <FavoritesScreen/>
               </PrivateRoute>
             }
           />

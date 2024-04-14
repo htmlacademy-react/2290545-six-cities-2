@@ -1,11 +1,6 @@
 import Header from '../../components/header/header.tsx';
-import {Offer} from '../../types/offer.ts';
 
-type FavoritesProps = {
-  offers: Offer[];
-};
-
-function FavoritesScreen({ offers }: FavoritesProps): JSX.Element {
+function FavoritesScreen(): JSX.Element {
   return (
     <div className="page">
       <header className="header">
