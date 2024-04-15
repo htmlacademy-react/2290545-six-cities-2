@@ -52,16 +52,19 @@ function Map({ offers, selectedPoint, className}: MapProps): JSX.Element {
     }
   }, [map, offers, selectedPoint]);
 
-  return <section
-    style={{
-      height: '100%',
-      minHeight: '500px',
-      width: '100%',
-      maxWidth: '1144px',
-      margin: '0 auto',
-  }}
-    className={`${className} map`}
-    ref={mapRef}></section>;
+  return (
+    <section
+      style={{
+        height: '100%',
+        minHeight: '500px',
+        width: '100%',
+        maxWidth: '1144px',
+        margin: '0 auto',
+      }}
+      className={`${className} map`}
+      ref={mapRef}
+    >
+    </section>);
 }
 
 export default Map;
