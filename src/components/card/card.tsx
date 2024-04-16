@@ -2,7 +2,7 @@ import {Offer} from '../../types/offer.ts';
 import {MouseEvent} from 'react';
 import {AppRoute, housing} from '../../const.ts';
 import {getRatingStarsStyle} from '../../utils/utils.ts';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 
 type CardProps = {
