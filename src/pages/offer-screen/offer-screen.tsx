@@ -160,7 +160,7 @@ function OfferScreen({offers, reviews}: OfferScreenProps): JSX.Element {
               Other places in the neighbourhood
             </h2>
             <div className="near-places__list places__list">
-              <CardList offers={offers.slice(0, MAX_NEAR_OFFERS_AMOUNT)} className="near-places__list" ></CardList>
+              <CardList offers={offers.slice(0, MAX_NEAR_OFFERS_AMOUNT)} className="near-places__list" />
             </div>
           </section>
         </div>

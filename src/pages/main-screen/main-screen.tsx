@@ -7,6 +7,7 @@ import Map from '../../components/map/map.tsx';
 
 type MainProps = {
   offers: Offer[];
+
 };
 
 function MainScreen({offers}: MainProps): JSX.Element {
@@ -22,7 +23,7 @@ function MainScreen({offers}: MainProps): JSX.Element {
               <h2 className="visually-hidden">Places</h2>
               <b className="places__found">{offers.length} places to stay in Amsterdam</b>
               <Sort/>
-              <CardList offers={offers.slice(0,3)}></CardList>
+              <CardList offers={offers} className="cities__places-list"></CardList>
             </section>
             <div className="cities__right-section">
               <Map offers={offers} className="cities__map"/>
