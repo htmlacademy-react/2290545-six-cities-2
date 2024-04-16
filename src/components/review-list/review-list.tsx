@@ -1,5 +1,7 @@
 import {getRatingStarsStyle} from '../../utils/utils.ts';
 import {Review} from '../../types/review.ts';
+import dayjs from 'dayjs';
+import {DateFormat} from '../../const';
 
 type ReviewProps = {
   reviews: Review[];
@@ -9,9 +11,11 @@ export function ReviewList({reviews}: ReviewProps): JSX.Element {
 
   return (
     <section className="offer__reviews reviews">
-      <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
+      <h2 className="reviews__title">Reviews &middot;
+        <span className="reviews__amount">{reviews.length}</span>
+      </h2>
       <ul className="reviews__list">
-        {reviews.map(({rating, id, user, comment}) => (
+        {reviews.map(({rating, id, user, comment, date}) => (
           <li className="reviews__item" key={id}>
             <div className="reviews__user user">
               <div className="reviews__avatar-wrapper user__avatar-wrapper">
@@ -36,7 +40,12 @@ export function ReviewList({reviews}: ReviewProps): JSX.Element {
               <p className="reviews__text">
                 {comment}
               </p>
-              <time className="reviews__time" dateTime="2019-04-24">April 2019</time>
+              <time
+                className="reviews__time"
+                dateTime={dayjs(date).format(DateFormat.ATTRIBUTE_FORMAT)}
+              >
+                {dayjs(date).format(DateFormat.REVIEW_DATE_FORMAT)}
+              </time>
             </div>
           </li>
         ))}

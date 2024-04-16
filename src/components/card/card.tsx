@@ -1,7 +1,8 @@
 import {Offer} from '../../types/offer.ts';
 import {MouseEvent} from 'react';
-import {housing} from '../../const.ts';
+import {AppRoute, housing} from '../../const.ts';
 import {getRatingStarsStyle} from '../../utils/utils.ts';
+import {Link} from "react-router-dom";
 
 
 type CardProps = {
@@ -18,7 +19,7 @@ export default function Card({offer, onMouseOver}: CardProps): JSX.Element {
         <span>Premium</span>
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <a href="/">
           <img
             className="place-card__image"
             src={previewImage}
@@ -55,7 +56,7 @@ export default function Card({offer, onMouseOver}: CardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={`${AppRoute.Offer}/${offer.id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{housing[type]}</p>
       </div>
