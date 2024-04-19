@@ -4,15 +4,15 @@ import {useState} from 'react';
 
 type CardListProps = {
   offers: Offer[];
-  className: String;
+  className: string;
 };
 
 export default function CardList({offers, className}: CardListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState('');
   return (
     <div className={`${className} places__list`}>
-         {offers.map((offer) => (
-        <Card key={offer.id} offer={offer} onMouseOver={() => setActiveCard(offer.id)} className="near-places__list"/>
+      {offers.map((offer) => (
+        <Card key={offer.id} offer={offer} onMouseOver={() => setActiveCard(offer.id)}/>
       ))}
     </div>
   );
