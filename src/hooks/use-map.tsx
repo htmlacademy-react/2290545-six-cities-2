@@ -1,8 +1,12 @@
 import React, {useEffect, useState, useRef} from 'react';
 import {Map, TileLayer} from 'leaflet';
 import {Location} from '../types/offer.ts';
-const TILE_LAYER = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
-const COPYRIGHT = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
+const TILE_LAYER =
+  'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+const COPYRIGHT =
+  '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; ' +
+  '<a href="https://carto.com/attributions">CARTO</a>';
 
 function useMap(
   mapRef: React.MutableRefObject<HTMLElement | null>,
