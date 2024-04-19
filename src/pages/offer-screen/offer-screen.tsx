@@ -4,9 +4,9 @@ import {Offer} from '../../types/offer.ts';
 import ReviewForm from '../../components/review-form/review-form.tsx';
 import Map from '../../components/map/map.tsx';
 import CardList from '../../components/card-list/card-list.tsx';
-import Header from "../../components/header/header.tsx";
-const MAX_NEAR_OFFERS_AMOUNT:number = 3;
+import Header from '../../components/header/header.tsx';
 
+const MAX_NEAR_OFFERS_AMOUNT = 3;
 
 type OfferScreenProps = {
   offers: Offer[];
@@ -159,9 +159,7 @@ function OfferScreen({offers, reviews}: OfferScreenProps): JSX.Element {
             <h2 className="near-places__title">
               Other places in the neighbourhood
             </h2>
-            <div className="near-places__list places__list">
               <CardList offers={offers.slice(0, MAX_NEAR_OFFERS_AMOUNT)} className="near-places__list" />
-            </div>
           </section>
         </div>
       </main>

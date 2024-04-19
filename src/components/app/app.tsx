@@ -21,11 +21,11 @@ export default function App({ offers, reviews }: AppProps): JSX.Element {
       <BrowserRouter>
         <Routes>
           <Route
-            path={AppRoute.Root}
+            path={AppRoute.root}
             element={<MainScreen offers={offers}/>}
           />
           <Route
-            path={AppRoute.Favorites}
+            path={AppRoute.favorites}
             element={
               <PrivateRoute
                 authorizationStatus={AuthorizationStatus.NoAuth}
@@ -35,10 +35,12 @@ export default function App({ offers, reviews }: AppProps): JSX.Element {
             }
           />
           <Route
-            path={AppRoute.Login}
+            path={AppRoute.login}
             element={<LoginScreen />}
           />
-          <Route path={`${AppRoute.Offer}/:offerId`} element={<OfferScreen offers={offers} reviews={reviews} />}
+          <Route
+            path={`${AppRoute.offer}`}
+            element={<OfferScreen offers={offers} reviews={reviews} />}
           />
           <Route
             path="*"
