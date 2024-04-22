@@ -1,4 +1,3 @@
-
 import Card from '../../components/card/card';
 import {useState} from 'react';
 import {Offer} from "../../types/offer.ts";
@@ -10,6 +9,7 @@ type CardListProps = {
 
 export default function CardList({offers, className}: CardListProps): JSX.Element {
   const [activeCard, setActiveCard] = useState('');
+
   return (
     <div className={`${className} places__list`}>
       {offers.map((offer) => (

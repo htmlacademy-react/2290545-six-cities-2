@@ -25,7 +25,7 @@ export default function App({offers, reviews }: AppProps): JSX.Element {
         <Routes>
           <Route
             path={AppRoute.root}
-            element={<MainScreen offers={offers}/>}
+            element={<MainScreen />}
           />
           <Route
             path={AppRoute.favorites}

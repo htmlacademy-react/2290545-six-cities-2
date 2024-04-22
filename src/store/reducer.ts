@@ -2,7 +2,7 @@ import {createReducer} from '@reduxjs/toolkit';
 import { CitiesName } from '../const';
 import { offersMock} from '../mocks/offers';
 import { filterOffers, pickCity } from './action';
-import {initialStateType} from "../types/state.ts";
+import {initialStateType} from '../types/state.ts';
 
 const START_CITY_NAME = 'Paris';
 

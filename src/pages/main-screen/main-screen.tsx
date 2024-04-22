@@ -1,18 +1,14 @@
 import Header from '../../components/header/header';
-import {Offer} from '../../types/offer';
 import Cities from '../../components/cities/cities.tsx';
 import Sort from '../../components/sort/sort.tsx';
 import CardList from '../../components/card-list/card-list.tsx';
 import Map from '../../components/map/map.tsx';
 import { useAppSelector } from '../../hooks';
 
-type MainProps = {
-  offers: Offer[];
-};
-
-function MainScreen({offers}: MainProps): JSX.Element {
+function MainScreen(): JSX.Element {
   const currentCity = useAppSelector((state)=>state.cityName);
-console.log(currentCity);
+  const offers = useAppSelector((state)=>state.offers);
+
   return (
     <div className="page page--gray page--main">
       <Header/>
