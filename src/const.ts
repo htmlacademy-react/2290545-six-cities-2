@@ -28,4 +28,18 @@ export const URL_MARKER_CURRENT = 'img/pin-active.svg';
 export const DateFormat = {
   ATTRIBUTE_FORMAT: 'YYYY-MM-DD',
   REVIEW_DATE_FORMAT: 'MMMM YYYY'
+}
+
+export enum CitiesName {
+  AMSTERDAM = 'Amsterdam',
+  COLOGNE = 'Cologne',
+  PARIS = 'Paris',
+  DUSSELDORF = 'Dusseldorf',
+  BRUSSELS = 'Brussels',
+  HAMBURG = 'Hamburg',
+}
+
+export enum Actions {
+  PICK_CITY = 'PICK_CITY',
+  FILTER_OFFERS = 'FILTER_OFFERS',
 };

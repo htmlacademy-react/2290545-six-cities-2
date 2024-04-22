@@ -7,15 +7,18 @@ import OfferScreen from '../../pages/offer-screen/offer-screen';
 import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import {HelmetProvider} from 'react-helmet-async';
-import {Offer} from '../../types/offer';
 import {Review} from '../../types/review.ts';
+import {Offer} from "../../types/offer.ts";
+
+
 
 type AppProps = {
-  offers: Offer[];
   reviews: Review[];
+  offers: Offer[]
 }
 
-export default function App({ offers, reviews }: AppProps): JSX.Element {
+export default function App({offers, reviews }: AppProps): JSX.Element {
+
   return (
     <HelmetProvider>
       <BrowserRouter>
