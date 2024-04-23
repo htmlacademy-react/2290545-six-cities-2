@@ -42,9 +42,9 @@ export function ReviewList({reviews}: ReviewProps): JSX.Element {
               </p>
               <time
                 className="reviews__time"
-                dateTime={dayjs(date).format(DateFormat.ATTRIBUTE_FORMAT)}
+                dateTime={dayjs(date).format(DateFormat.AttributeFormat)}
               >
-                {dayjs(date).format(DateFormat.REVIEW_DATE_FORMAT)}
+                {dayjs(date).format(DateFormat.ReviewDateFormat)}
               </time>
             </div>
           </li>

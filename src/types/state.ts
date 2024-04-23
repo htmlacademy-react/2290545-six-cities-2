@@ -1,6 +1,6 @@
 import { Offer } from './offer';
 
 export type initialStateType = {
-  cityName: string | null;
+  cityName: string;
   offers: Offer[];
 }

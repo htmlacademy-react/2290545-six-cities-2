@@ -17,7 +17,7 @@ export default function Card({offer, onMouseOver}: CardProps): JSX.Element {
         <span>Premium</span>
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={generatePath(AppRoute.offer,{id: offer.id})}>
+        <Link to={generatePath(AppRoute.Offer, {id: offer.id})}>
           <img
             className="place-card__image"
             src={previewImage}
@@ -42,7 +42,7 @@ export default function Card({offer, onMouseOver}: CardProps): JSX.Element {
               width={18}
               height={19}
             >
-              <use xlinkHref="#icon-bookmark" />
+              <use xlinkHref="#icon-bookmark"/>
             </svg>
             <span className="visually-hidden">To bookmarks</span>
           </button>
@@ -54,7 +54,7 @@ export default function Card({offer, onMouseOver}: CardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={generatePath(AppRoute.offer,{id: offer.id})}>{title}</Link>
+          <Link to={generatePath(AppRoute.Offer, {id: offer.id})}>{title}</Link>
         </h2>
         <p className="place-card__type">{housing[type]}</p>
       </div>

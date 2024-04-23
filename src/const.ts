@@ -1,7 +1,7 @@
 export enum AppRoute {
-  login = '/login',
-  offer = '/offer/:id',
-  favorites = '/favorites',
+  Login = '/login',
+  Offer = '/offer/:id',
+  Favorites = '/favorites',
   root = '/',
 
 }
@@ -13,10 +13,10 @@ export enum AuthorizationStatus {
 }
 
 export const housing: Record<string, string> = {
-  apartment: 'Apartment',
-  room: 'Private Room',
-  house: 'House',
-  hotel: 'Hotel'
+  Apartment: 'Apartment',
+  Room: 'Private Room',
+  House: 'House',
+  Hotel: 'Hotel'
 };
 
 export const MAX_STARS_RATING = 20;
@@ -26,20 +26,20 @@ export const URL_MARKER_DEFAULT = 'img/pin.svg';
 export const URL_MARKER_CURRENT = 'img/pin-active.svg';
 
 export const DateFormat = {
-  ATTRIBUTE_FORMAT: 'YYYY-MM-DD',
-  REVIEW_DATE_FORMAT: 'MMMM YYYY'
-}
+  AttributeFormat: 'YYYY-MM-DD',
+  ReviewDateFormat: 'MMMM YYYY'
+};
 
-export enum CitiesName {
-  AMSTERDAM = 'Amsterdam',
-  COLOGNE = 'Cologne',
-  PARIS = 'Paris',
-  DUSSELDORF = 'Dusseldorf',
-  BRUSSELS = 'Brussels',
-  HAMBURG = 'Hamburg',
-}
+export const CitiesName = {
+  Paris: 'Paris',
+  Cologne: 'Cologne',
+  Brussels: 'Brussels',
+  Amsterdam: 'Amsterdam',
+  Hamburg: 'Hamburg',
+  Dusseldorf: 'Dusseldorf',
+} as const;
+
 
 export enum Actions {
-  PICK_CITY = 'PICK_CITY',
-  FILTER_OFFERS = 'FILTER_OFFERS',
-};
+  PickCity = 'PICK_CITY',
+}

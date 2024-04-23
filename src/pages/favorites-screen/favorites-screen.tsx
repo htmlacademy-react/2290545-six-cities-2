@@ -1,13 +1,14 @@
 import Header from '../../components/header/header.tsx';
 
 function FavoritesScreen(): JSX.Element {
+
   return (
     <div className="page">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <Header />
+              <Header/>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
@@ -79,14 +80,14 @@ function FavoritesScreen(): JSX.Element {
                             width={18}
                             height={19}
                           >
-                            <use xlinkHref="#icon-bookmark" />
+                            <use xlinkHref="#icon-bookmark"/>
                           </svg>
                           <span className="visually-hidden">In bookmarks</span>
                         </button>
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{ width: '100%' }} />
+                          <span style={{width: '100%'}}/>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>
@@ -125,14 +126,14 @@ function FavoritesScreen(): JSX.Element {
                             width={18}
                             height={19}
                           >
-                            <use xlinkHref="#icon-bookmark" />
+                            <use xlinkHref="#icon-bookmark"/>
                           </svg>
                           <span className="visually-hidden">In bookmarks</span>
                         </button>
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{ width: '80%' }} />
+                          <span style={{width: '80%'}}/>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>
@@ -182,14 +183,14 @@ function FavoritesScreen(): JSX.Element {
                             width={18}
                             height={19}
                           >
-                            <use xlinkHref="#icon-bookmark" />
+                            <use xlinkHref="#icon-bookmark"/>
                           </svg>
                           <span className="visually-hidden">In bookmarks</span>
                         </button>
                       </div>
                       <div className="place-card__rating rating">
                         <div className="place-card__stars rating__stars">
-                          <span style={{ width: '100%' }} />
+                          <span style={{width: '100%'}}/>
                           <span className="visually-hidden">Rating</span>
                         </div>
                       </div>

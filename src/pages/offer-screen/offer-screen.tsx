@@ -14,6 +14,7 @@ type OfferScreenProps = {
 };
 
 function OfferScreen({offers, reviews}: OfferScreenProps): JSX.Element {
+
   return (
     <div className="page">
       <Header/>

@@ -3,11 +3,12 @@ import Cities from '../../components/cities/cities.tsx';
 import Sort from '../../components/sort/sort.tsx';
 import CardList from '../../components/card-list/card-list.tsx';
 import Map from '../../components/map/map.tsx';
-import { useAppSelector } from '../../hooks';
+import {useAppSelector} from '../../hooks';
 
 function MainScreen(): JSX.Element {
-  const currentCity = useAppSelector((state)=>state.cityName);
-  const offers = useAppSelector((state)=>state.offers);
+  const currentCity = useAppSelector((state) => state.cityName);
+  const offers = useAppSelector((state) => state.offers);
+  const filteredOffers = offers.filter((offer) => offer.city.name === currentCity);
 
   return (
     <div className="page page--gray page--main">
@@ -23,18 +24,17 @@ function MainScreen(): JSX.Element {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offers.length} places to stay in {currentCity}</b>
+              <b className="places__found">{filteredOffers.length} places to stay in {currentCity}</b>
               <Sort/>
-              <CardList offers={offers} className="cities__places--list"></CardList>
+              <CardList offers={filteredOffers} className="cities__places-list"></CardList>
             </section>
             <div className="cities__right-section">
-              <Map offers={offers} className="cities__map"/>
+              <Map offers={filteredOffers} className="cities__map"/>
             </div>
           </div>
         </div>
       </main>
     </div>
-
   );
 }
 
