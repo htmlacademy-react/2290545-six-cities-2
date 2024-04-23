@@ -1,15 +1,15 @@
 import {Link} from 'react-router-dom';
 import styles from './404.module.css';
 import Header from '../../components/header/header';
-import Cities from '../../components/cities/cities';
+
 import Sort from '../../components/sort/sort';
 
 function NotFoundScreen(): JSX.Element {
+
   return (
     <section className="404">
       <header className="404__header">
         <Header />
-        <Cities/>
         <Sort/>
       </header>
 

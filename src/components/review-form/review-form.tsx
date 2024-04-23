@@ -7,7 +7,7 @@ export default function ReviewForm(): JSX.Element {
     review: '',
   });
 
-  const handleChange = (evt: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>): void => {
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
     const {name, value} = evt.target;
     setFormData({
       ...formData,
