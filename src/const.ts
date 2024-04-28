@@ -42,4 +42,12 @@ export const CitiesName = {
 
 export enum Actions {
   PickCity = 'PICK_CITY',
+  sortType = 'SORT_TYPE',
 }
+
+export const SortingMap = {
+  Popular: 'Popular',
+  LowToHigh: 'LowToHigh',
+  HighToLow: 'HighToLow',
+  TopRated: 'Top rated first',
+} as const;

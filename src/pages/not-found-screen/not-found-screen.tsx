@@ -2,7 +2,6 @@ import {Link} from 'react-router-dom';
 import styles from './404.module.css';
 import Header from '../../components/header/header';
 
-import Sort from '../../components/sort/sort';
 
 function NotFoundScreen(): JSX.Element {
 
@@ -10,7 +9,6 @@ function NotFoundScreen(): JSX.Element {
     <section className="404">
       <header className="404__header">
         <Header />
-        <Sort/>
       </header>
 
       <section className="404__screen">
