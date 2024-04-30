@@ -3,21 +3,20 @@ import cn from 'classnames';
 import {SortingMap} from '../../const.ts';
 import {TSorting} from '../../types/sort.ts';
 import {useAppDispatch} from '../../hooks';
-import {sortType} from '../../store/action.ts';
+import {changeSortType} from '../../store/action.ts';
 
-
+type SortEntries = [TSorting, (typeof SortingMap)[TSorting]][];
 
 type SortingProps = {
   activeSorting: TSorting;
-  onChange: (newSorting: TSorting) => void;
 }
 
-function Sorting({activeSorting, onChange}: SortingProps) {
+function Sorting({activeSorting}: SortingProps) {
   const [isOpened, setIsOpened] = useState(false);
   const dispatch = useAppDispatch();
 
   const iconStyle = {
-    transform: `transLatey(-50%) ${isOpened ? 'rotate(180deg)' : ''}`,
+    transform: `transLateY(-50%) ${isOpened ? 'rotate(180deg)' : ''}`,
   };
 
   function handleKeydown(evt: KeyboardEvent) {
@@ -32,8 +31,7 @@ function Sorting({activeSorting, onChange}: SortingProps) {
   }
 
   function handleSortingItemClick(type: TSorting) {
-    dispatch(sortType(type));
-    onChange(type);
+    dispatch(changeSortType(type));
     setIsOpened(false);
 
   }
@@ -45,7 +43,7 @@ function Sorting({activeSorting, onChange}: SortingProps) {
       method="get"
       onKeyDown={handleKeydown}
     >
-      <span className="places__sorting-caption">Sort by</span>
+      <span className="places__sorting-caption">Sort by{' '}</span>
       <span
         className="places__sorting-type"
         tabIndex={0}
@@ -63,20 +61,15 @@ function Sorting({activeSorting, onChange}: SortingProps) {
       </span>
       <ul
         className={cn('places__options', 'places__options--custom', {
-          'places__option--opened': isOpened,
+          'places__options--opened': isOpened,
         })}
       >
-        {(
-          Object.entries(SortingMap) as [
-            TSorting,
-            (typeof SortingMap)[TSorting]
-          ][]
-        ).map(([type, label]) => (
+        {(Object.entries(SortingMap) as SortEntries).map(([type, label]) => (
 
           <li
             key={type}
-            className={cn('places__options', {
-              'places__options--active': activeSorting === type,
+            className={cn('places__option', {
+              'places__option--active': activeSorting === type,
             })}
             tabIndex={0}
             onClick={() => handleSortingItemClick(type)}

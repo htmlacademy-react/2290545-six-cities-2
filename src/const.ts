@@ -47,7 +47,7 @@ export enum Actions {
 
 export const SortingMap = {
   Popular: 'Popular',
-  LowToHigh: 'LowToHigh',
-  HighToLow: 'HighToLow',
+  LowToHigh: 'Price: Low To High',
+  HighToLow: 'Price: High To Low',
   TopRated: 'Top rated first',
 } as const;

@@ -6,7 +6,7 @@ export const pickCity = createAction(Actions.PickCity, (textContent: string) => 
 
 }));
 
-export const sortType = createAction(Actions.sortType, (textContent: string) => ({
+export const changeSortType = createAction(Actions.sortType, (textContent: string) => ({
   payload: textContent,
 
 }));
