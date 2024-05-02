@@ -9,22 +9,22 @@ import useMap from '../../hooks/use-map.tsx';
 type MapProps = {
   offers: Offer[];
   className: string;
-  selectedPoint?: string;
+  activeCard: string;
 };
 
-const defaultCustomIcon = new Icon({
+const defaultIcon = new Icon({
   iconUrl: URL_MARKER_DEFAULT,
   iconSize: [27, 39],
   iconAnchor: [13.5, 39]
 });
 
-const currentCustomIcon = new Icon({
+const currentIcon = new Icon({
   iconUrl: URL_MARKER_CURRENT,
   iconSize: [27, 39],
   iconAnchor: [13.5, 39]
 });
 
-function Map({offers, selectedPoint, className}: MapProps): JSX.Element {
+function Map({offers, activeCard, className}: MapProps): JSX.Element {
   const mapRef = useRef(null);
   const map = useMap(mapRef, offers[0].city.location);
 
@@ -39,10 +39,7 @@ function Map({offers, selectedPoint, className}: MapProps): JSX.Element {
 
         marker
           .setIcon(
-            selectedPoint !== undefined && offer.id === selectedPoint
-              ? currentCustomIcon
-              : defaultCustomIcon
-          )
+            activeCard === offer.id ? currentIcon : defaultIcon)
           .addTo(markerLayer);
       });
 
@@ -50,7 +47,7 @@ function Map({offers, selectedPoint, className}: MapProps): JSX.Element {
         map.removeLayer(markerLayer);
       };
     }
-  }, [map, offers, selectedPoint]);
+  }, [map, offers, activeCard]);
 
   return (
     <section

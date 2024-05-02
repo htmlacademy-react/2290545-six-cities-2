@@ -10,6 +10,7 @@ type CitiesProps = {
 export default function Cities({currentCity}: CitiesProps): JSX.Element {
   const dispatch = useAppDispatch();
   const cities = Object.keys(CitiesName);
+
   const handleClick = (city: string) => {
     dispatch(pickCity(city));
   };
