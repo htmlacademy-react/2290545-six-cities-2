@@ -1,26 +1,27 @@
 import {MAX_STARS_RATING} from '../const.ts';
-import {Offer} from '../types/offer.ts';
-import {TSorting} from '../types/sort.ts';
+import {OfferPreview} from '../types/offer.ts';
+import {Sorting} from '../types/sort.ts';
 
 export function getRatingStarsStyle(rating: number): string {
-  return `${rating * 100 / MAX_STARS_RATING }%`;
+  const percentage = (Math.round(rating) * 100) / MAX_STARS_RATING;
+  return `${percentage}%`;
 }
 
-function sortByRating (a: Offer, b:Offer) {
+function sortByRating(a: OfferPreview, b: OfferPreview) {
   return a.rating - b.rating;
 }
 
-function sortLowToHigh (a: Offer, b: Offer) {
+function sortLowToHigh(a: OfferPreview, b: OfferPreview) {
   return a.price - b.price;
 }
 
-function sortHighToLow (a: Offer, b: Offer) {
+function sortHighToLow(a: OfferPreview, b: OfferPreview) {
   return b.price - a.price;
 }
 
-export const sorting: Record<TSorting, (offers: Offer[]) => Offer[]> = {
-  Popular: (offers: Offer[]) => offers.slice(),
-  HighToLow: (offers: Offer[]) => offers.slice().sort(sortHighToLow),
-  LowToHigh: (offers: Offer[]) => offers.slice().sort(sortLowToHigh),
-  TopRated: (offers: Offer[]) => offers.slice().sort(sortByRating),
+export const sorting: Record<Sorting, (offers: OfferPreview[]) => OfferPreview[]> = {
+  Popular: (offers: OfferPreview[]) => offers.slice(),
+  HighToLow: (offers: OfferPreview[]) => offers.slice().sort(sortHighToLow),
+  LowToHigh: (offers: OfferPreview[]) => offers.slice().sort(sortLowToHigh),
+  TopRated: (offers: OfferPreview[]) => offers.slice().sort(sortByRating),
 };

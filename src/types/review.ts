@@ -1,8 +1,4 @@
-type User = {
-  name: string;
-  avatarUrl: string;
-  isPro: boolean;
-};
+import {User} from './userData.ts';
 
 export type Review = {
   id: string;
@@ -11,3 +7,10 @@ export type Review = {
   comment: string;
   rating: number;
 }
+
+export type CommentPost = {
+  comment: string;
+  rating: number;
+  offerId: string;
+}
+

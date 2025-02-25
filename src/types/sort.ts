@@ -1,3 +1,3 @@
 import {SortingMap} from '../const.ts';
 
-export type TSorting = keyof typeof SortingMap;
+export type Sorting = keyof typeof SortingMap;

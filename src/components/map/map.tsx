@@ -1,45 +1,49 @@
-import {useRef, useEffect} from 'react';
-import {Icon, Marker, layerGroup} from 'leaflet';
+import {useRef, useEffect } from 'react';
+import leaflet, {layerGroup, Marker} from 'leaflet';
+import useMap from '../../hook/use-map.tsx';
+import {OfferPreview} from '../../types/offer.ts';
 import 'leaflet/dist/leaflet.css';
-import {URL_MARKER_CURRENT, URL_MARKER_DEFAULT} from '../../const.ts';
-import {Offer} from '../../types/offer.ts';
-import useMap from '../../hooks/use-map.tsx';
+
+const URL_MARKER_DEFAULT = 'img/pin.svg';
+const URL_MARKER_CURRENT = 'img/pin-active.svg';
+const ZOOM_DEFAULT = 13;
 
 
 type MapProps = {
-  offers: Offer[];
+  activeCardId: OfferPreview['id'] | null;
+  offers: OfferPreview[];
   className: string;
-  activeCard: string;
 };
 
-const defaultIcon = new Icon({
+const defaultCustomIcon = leaflet.icon({
   iconUrl: URL_MARKER_DEFAULT,
   iconSize: [27, 39],
-  iconAnchor: [13.5, 39]
+  iconAnchor: [13, 39]
 });
 
-const currentIcon = new Icon({
+const currentCustomIcon = leaflet.icon({
   iconUrl: URL_MARKER_CURRENT,
   iconSize: [27, 39],
-  iconAnchor: [13.5, 39]
+  iconAnchor: [13, 39]
 });
 
-function Map({offers, activeCard, className}: MapProps): JSX.Element {
+export default function Map({ offers, activeCardId, className}: MapProps) {
   const mapRef = useRef(null);
-  const map = useMap(mapRef, offers[0].city.location);
+  const map = useMap(mapRef, offers[0].city);
 
   useEffect(() => {
     if (map) {
       const markerLayer = layerGroup().addTo(map);
-      offers.forEach((offer) => {
-        const marker = new Marker({
-          lat: offer.location.latitude,
-          lng: offer.location.longitude
-        });
 
+      offers.map(({location, id}) => {
+        const marker = new Marker({
+          lat: location.latitude,
+          lng: location.longitude,
+        });
         marker
           .setIcon(
-            activeCard === offer.id ? currentIcon : defaultIcon)
+            activeCardId === id ? currentCustomIcon : defaultCustomIcon,
+          )
           .addTo(markerLayer);
       });
 
@@ -47,21 +51,22 @@ function Map({offers, activeCard, className}: MapProps): JSX.Element {
         map.removeLayer(markerLayer);
       };
     }
-  }, [map, offers, activeCard]);
+  }, [map, offers, activeCardId]);
+
+  useEffect(() => {
+    if (map) {
+      map.setView([offers[0].location.latitude, offers[0].location.longitude], ZOOM_DEFAULT);
+    }
+  }, [offers, map]);
+
 
   return (
     <section
-      style={{
-        height: '100%',
-        minHeight: '500px',
-        width: '100%',
-        maxWidth: '1144px',
-        margin: '0 auto',
-      }}
       className={`${className} map`}
       ref={mapRef}
     >
-    </section>);
+    </section>
+  );
 }
 
-export default Map;
+
