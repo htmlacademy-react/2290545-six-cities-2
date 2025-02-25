@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Алексей Пыханов](https://up.htmlacademy.ru/react-individual/2/user/2290545).
-* Наставник: [Николай Котиков](https://htmlacademy.ru/profile/niklcat).
+* Наставник: [Алексей Хабиров](https://htmlacademy.ru/profile/alex_khab).
 
 ---
 
