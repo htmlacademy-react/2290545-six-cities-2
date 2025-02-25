@@ -1,22 +1,21 @@
-import Card from '../../components/card/card';
-import {Offer} from '../../types/offer.ts';
+import Card from '../card/card.tsx';
+import {OfferPreview} from '../../types/offer.ts';
+
 
 type CardListProps = {
-  offers: Offer[];
-  className: string;
+  offers: OfferPreview[];
+  onCardHover: (offerId: OfferPreview['id'] | null) => void;
 };
 
-export default function CardList({offers, className}: CardListProps): JSX.Element {
+export default function CardList({offers, onCardHover}: CardListProps) {
 
   return (
-    <div className={`${className} places__list`}>
+    <div className="cities__places-list places__list tabs__content">
       {offers.map((offer) => (
-        <Card
-          key={offer.id}
-          offer={offer}
-        />
+        <Card key={offer.id} offer={offer} onCardHover={onCardHover} />
       ))}
     </div>
   );
-}
 
+
+}

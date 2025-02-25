@@ -1,0 +1,13 @@
+.active{
+  display: block;
+  color: blue;
+  text-decoration: none;
+  text-align: center;
+}
+
+.text {
+  height: 48px;
+  text-align: center;
+}
+
+
