@@ -6,7 +6,7 @@ import {AppRoute, AuthorizationStatus} from './const.ts';
 import {useAppSelector} from './hook/use-app-selector.tsx';
 import FullPageLoader from './components/full-page-loader/full-page-loader.tsx';
 import browserHistory from './browserHistory/browserHistory.ts';
-import HistoryRouter from './components/HistoryRouter/HistoryRouter.tsx';
+import HistoryRouter from './components/history-router/history-router.tsx';
 import {getErrorStatus, getOfferDataLoadingStatus} from './store/offers/selector.ts';
 import ErrorScreen from './components/error-screen/error-screen.tsx';
 import CardOffer from './pages/card-offer/card-offer.tsx';
